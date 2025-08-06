@@ -148,8 +148,8 @@ class Program
       Console.WriteLine("Relatório de Vendas");
       Console.WriteLine($"Quantidade de Vendas Realizadas = {quantidadeVendas}");
       Console.WriteLine($"{Produto1} - Quantidade = {Produto1Vendas} - Valor Total Vendido {Produto1Vendido:F2}");
-      Console.WriteLine($"{Produto1} - Quantidade = {Produto1Vendas} - Valor Total Vendido {Produto2Vendido:F2}");
-      Console.WriteLine($"{Produto1} - Quantidade = {Produto1Vendas} - Valor Total Vendido {Produto3Vendido:F2}");
+      Console.WriteLine($"{Produto1} - Quantidade = {Produto2Vendas} - Valor Total Vendido {Produto2Vendido:F2}");
+      Console.WriteLine($"{Produto1} - Quantidade = {Produto3Vendas} - Valor Total Vendido {Produto3Vendido:F2}");
       Console.WriteLine($"Média de Vendas = {MediaVendas:F2}");
       Console.WriteLine();
       string[] relatorioVendas = {
