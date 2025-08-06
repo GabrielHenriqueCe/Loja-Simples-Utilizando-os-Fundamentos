@@ -144,42 +144,44 @@ class Program
         MediaVendas=(Produto1Vendas + Produto2Vendas + Produto3Vendas)/ quantidadeVendas;
     }
     do
-    {
+    { 
+      Console.WriteLine("Relatório de Vendas");
+      Console.WriteLine($"Quantidade de Vendas Realizadas = {quantidadeVendas}");
+      Console.WriteLine($"{Produto1} - Quantidade = {Produto1Vendas} - Valor Total Vendido {Produto1Vendido:F2}");
+      Console.WriteLine($"{Produto1} - Quantidade = {Produto1Vendas} - Valor Total Vendido {Produto2Vendido:F2}");
+      Console.WriteLine($"{Produto1} - Quantidade = {Produto1Vendas} - Valor Total Vendido {Produto3Vendido:F2}");
+      Console.WriteLine($"Média de Vendas = {MediaVendas:F2}");
+      Console.WriteLine();
       string[] relatorioVendas = {
-        $"Quantidade de Vendas Realizadas = {quantidadeVendas}",
-        $"{Produto1} - Quantidade = {Produto1Vendas} - Valor Total Vendido {Produto1Vendido:F2}",
-        $"{Produto2} - Quantidade = {Produto2Vendas} - Valor Total Vendido {Produto2Vendido:F2}",
-        $"{Produto3} - Quantidade = {Produto3Vendas} - Valor Total Vendido {Produto3Vendido:F2}",
-        $"Média de Vendas = {MediaVendas:F2}",
         $"Ajustar desconto para valores acima de = {valorDesconto:F2}",
         $"Ajustar porcentagem de desconto para = {porcentagemDesconto}%",
         $"Voltar"
       };
     
     
-      chamarMenu ("de Relatório de Vendas", relatorioVendas);
+      chamarMenu ("de Descontos", relatorioVendas);
     
-      entradaRelatorio = entradaValida("Escolha uma opção", 6, 8, "de Relatório de Vendas", relatorioVendas);
+      entradaRelatorio = entradaValida("Escolha uma opção", 1, 3, "de Descontos", relatorioVendas);
       
       switch (entradaRelatorio) //Chama o Menu correspondente a entrada
       {
-        case 6:
+        case 1:
           valorDesconto = entradaNumero("Digite o valor mínimo para aplicar o desconto");
           Console.WriteLine($"Valor ajustado para {valorDesconto:F2}");
           pausaParaLer();
           break;
-        case 7:
+        case 2:
           porcentagemDesconto = entradaNumero("Digite a porcentagem de desconto");
           Console.WriteLine($"Valor ajustado para {porcentagemDesconto}%");
           pausaParaLer();
           break;
-        case 8:
+        case 3:
           Console.Clear();
           break;
       }
     
     //Fim do loop para escolha do número com validação de entrada e fim ao escolher 8
-    }while (entradaRelatorio != 8);
+    }while (entradaRelatorio != 3);
     
   }//Fim do menu de relatório de vendas
 
